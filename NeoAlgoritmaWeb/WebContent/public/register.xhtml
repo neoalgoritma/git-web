@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+     
+	     
+   	<h:outputStylesheet name="initium/css/materialize.css" />
+	<h:outputStylesheet name="initium/css/layout-materialize-style.css"  />
+	<h:outputStylesheet name="initium/css/sweetalert2.css"  />
+	<h:outputStylesheet name="initium/css/custom.css"  />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>NeoAlgoritma</title>
+
+</h:head>
+
+<h:body styleClass="page-background">
+<h:form id="createAccountForm">
+<h:panelGroup id="panelDetail" layout="block">
+<div class="middle-screen-box register-box">
+<div class="row">
+ <div class="col s12">
+
+	<div class="card-panel border-radius-6 bg-opacity-8">
+	<div class="row">
+		<!-- Start register intro -->
+		
+			<div class="col s12 m5">
+				<div class="row">
+					<h:graphicImage name="initium/images/neoalgoritma-new-black.png" />
+        			<p class="grey-text text-darken-2">I am a very simple card. I am good at containing small bits of information.
+          			I am convenient because I require little markup to use effectively.</p>
+        		</div>
+				<div class="row">
+					<h:link styleClass="pink-text text-accent-2 waves-effect waves-light">
+                      <span class="nav-text">Terms and Conditions</span>
+                    </h:link>
+					
+       			</div>
+			</div>
+        
+		<!-- End register intro -->
+		<!-- Start register form -->
+		
+			<div class="col s12 m7">
+				<span class="grey-text text-darken-2">Please complete the following to register</span>
+				<div class="row margin-bottom-0">
+					<div class="input-field col s12 m6">
+						<p:inputText id="firstname" required="true" requiredMessage="Field required" value="#{registerBean.firstname}" />
+						<p:outputLabel for="firstname" value="First Name" />
+						<span class="error-message"><h:message for="firstname"/></span>
+					</div>
+					<div class="input-field col s12 m6">
+						<p:inputText id="lastname" required="true" requiredMessage="Field required"  value="#{registerBean.lastname}"/>
+						<p:outputLabel for="lastname" value="Last Name" />
+						<span class="error-message"><h:message for="lastname"/></span>
+					</div>
+				</div>
+				<div class="row margin-bottom-0">
+					<div class="input-field col s12 m12">
+						<p:inputText type="email" id="email" required="true" requiredMessage="Field required"   value="#{registerBean.email}" />
+						<p:outputLabel for="email" value="Email" />
+						<span class="error-message"><h:message for="email"/></span>
+					</div>
+				</div>
+				<div class="row margin-bottom-0">
+					<div class="input-field col s12 m6">
+						<p:inputText id="password" required="true" requiredMessage="Field required"  value="#{registerBean.password}" type="password"/>
+						<p:outputLabel for="password" value="Password" />
+						<span class="error-message"><h:message for="password"/></span>
+					</div>
+					<div class="input-field col s12 m6">
+						<p:inputText id="passwordRe" required="true" requiredMessage="Field required"  value="#{registerBean.passwordRe}" type="password"/>
+						<p:outputLabel for="passwordRe" value="Re-enter Password" />
+						<span class="error-message"><h:message for="passwordRe"/></span>
+					</div>
+				</div>
+				<div class="row margin-bottom-0">
+					<div class="input-field col s12 m6">
+						<p:inputText id="company" required="true" requiredMessage="Field required"  value="#{registerBean.company}"/>
+						<p:outputLabel for="company" value="Company" />
+						<span class="error-message"><h:message for="company"/></span>
+					</div>
+					<div class="input-field col s12 m6">
+						<p:inputText id="mobile" required="true" requiredMessage="Field required"  value="#{registerBean.mobile}"/>
+						<p:outputLabel for="mobile" value="Mobile" />
+						<span class="error-message"><h:message for="mobile"/></span>
+					</div>
+				</div>
+				<div class="row margin-bottom-0">
+					<div class="input-field col s12 m12">
+						<p:inputText id="address" required="true" requiredMessage="Field required"  value="#{registerBean.address}"/>
+						<p:outputLabel for="address" value="Address" />
+						<span class="error-message"><h:message for="address"/></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6">
+						<p:inputText id="postcode" required="true" requiredMessage="Field required"  value="#{registerBean.postcode}"/>
+						<p:outputLabel for="postcode" value="Post code" />
+						<span class="error-message"><h:message for="postcode"/></span>
+					</div>
+					<div class="input-field col s12 m6">
+						<p:inputText id="country" required="true" requiredMessage="Field required"  value="#{registerBean.country}"/>
+						<p:outputLabel for="country" value="Country" />
+						<span class="error-message"><h:message for="country"/></span>
+					</div>
+				</div>
+				<div class="row margin-bottom-0">
+					<div class="col s12 m12">
+							<p:commandLink oncomplete="Materialize.updateTextFields();"  update=":createAccountForm:panelDetail" actionListener="#{registerBean.register()}" 
+							styleClass="btn waves-effect waves-light right" >
+							<i class="material-icons right">send</i>Register</p:commandLink>	
+					</div>
+				</div>
+		</div>
+		<!-- End register form -->
+	
+	</div>
+	</div>
+
+		
+
+</div>	
+</div>
+</div>
+</h:panelGroup>
+</h:form>
+
+
+<h:outputScript library="primefaces" name="jquery/jquery.js" />
+<h:outputScript name="initium/script/layout-materialize.js" />
+<h:outputScript name="initium/script/perfect-scrollbar.min.js" />
+<h:outputScript name="initium/script/plugins.js" />
+<h:outputScript name="initium/script/sweetalert2.all.min.js" />
+<h:outputScript name="initium/script/layout.js"/>
+ 
+
+
+</h:body>
+</html>

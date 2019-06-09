@@ -1,0 +1,39 @@
+.nobullet {
+list-style-type: none;
+}
+
+body {
+	background-color: #fff;
+    
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+    color: #fff !important;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.disable-text-transform {
+	text-transform:none;
+}
+
+.input-field .helper-text {
+	color:#ef5350;
+}
+
+.input-field {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+
+

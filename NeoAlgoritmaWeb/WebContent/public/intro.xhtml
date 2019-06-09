@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet
+		name="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	<h:outputStylesheet name="initium/css/materialize.css" />
+	<h:outputStylesheet name="initium/css/style.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet" media="screen,projection" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<title>NeoAlgoritma</title>
+</h:head>
+
+<h:body>
+	<nav class="grey darken-4" role="navigation">
+	<div class="nav-wrapper container">
+		<a id="logo-container" href="#" class="brand-logo"><h:graphicImage
+				name="initium/images/neoalgoritma-new.png" /></a>
+		<ul class="right hide-on-med-and-down nobullet">
+			<li><a href="login.xhtml">Sign in</a></li>
+			<li><a href="register.xhtml" class="waves-effect waves-light btn disable-text-transform ">Register</a></li>
+		</ul>
+
+		<ul id="nav-mobile" class="sidenav">
+			<li><a href="#">Navbar Link</a></li>
+		</ul>
+		<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i
+			class="material-icons">menu</i></a>
+	</div>
+	</nav>
+
+	<div class="section no-pad-bot" id="index-banner">
+		<div class="container">
+			<br />
+			<br />
+			<h1 class="header center orange-text">Initium Point of Sales</h1>
+			<div class="row center">
+				<h5 class="header col s12 light">A modern responsive front-end
+					framework based on Material Design</h5>
+			</div>
+			<div class="row center">
+				<a href="create-account.xhtml"
+					id="download-button"
+					class="btn-large waves-effect waves-light orange">Get Started</a>
+			</div>
+			<br />
+			<br />
+
+		</div>
+	</div>
+
+	<div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Consentrate on sales</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default styling that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br/><br/>
+  </div>
+	
+<footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">Currently this is a Self managed project. Maintained by Freelance software engineer which is me ;)  </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://neoalgoritma.com">NeoAlgoritma</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<h:outputScript library="primefaces" name="jquery/jquery.js" />
+	<h:outputScript name="initium/script/materialize.js" />
+	<h:outputScript name="initium/script/init.js" />
+
+</h:body>
+</html>
