@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:b="http://bootsfaces.net/ui"
+		xmlns:p="http://primefaces.org/ui"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<h:outputStylesheet  name="initium/css/initium.css" position="last"/>
+<title>Initium - Point of Sales</title>
+</h:head>
+
+<h:body>
+
+
+             
+
+
+<script>
+    /*
+    $(document).ready(function(){
+    	//PF('statusDialog').hide();
+    	//PF('statusDialog').hide();
+    	//PF('statusDialog').show();
+    	//alert('i am ready');
+    });
+
+    $(window).on( "unload", function() {
+    	//PF('statusDialog').hide();
+    	//alert('i am not ready');
+    	//PF('statusDialog').show();
+    });
+  */
+    $(window).bind('beforeunload', function() {
+    	PF('statusDialog').show(); 
+    });
+    
+</script>
+
+<div class="layout-wrapper">
+	<p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+	
+	<ui:insert name="header">
+		<ui:include src="header.xhtml" />
+	</ui:insert>
+
+	<div class="layout-sidebar">
+        <div class="nano">
+        	<div class="nano-content menu-scroll-content">
+        		<b:panel title="Panel title">
+  					<b:button href="http://www.bootsfaces.net" look="primary"
+            			value="BootsFaces project page" icon="bookmark" />
+ 				</b:panel>
+ 			</div>
+        </div>
+    </div>
+        
+	<ui:insert name="content">
+	</ui:insert>
+
+	<ui:insert name="footer">
+		<ui:include src="footer.xhtml" />
+	</ui:insert>
+	
+	<p:dialog id="statusDialogId" widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false"   
+		showHeader="false" position="right,bottom" fitViewport="true" height="60" style="margin-right:10px;margin-bottom:10px;" >
+   		<i class="pi pi-spin pi-spinner" style="color:#1f7ed0;font-size: 4em"></i>
+	</p:dialog>
+
+</div>
+
+</h:body>
+</html>

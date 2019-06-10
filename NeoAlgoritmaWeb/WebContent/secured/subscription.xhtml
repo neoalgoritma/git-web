@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:b="http://bootsfaces.net/ui"
+		xmlns:p="http://primefaces.org/ui"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+		>
+
+<h:body>
+<ui:composition template="/WEB-INF/Templates/layout-non-pos.xhtml">
+<ui:define name="content">
+
+<h:form id="subscriptionForm">
+<!--breadcrumbs start-->
+<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+<div class="breadcrumbs-class" id="breadcrumbs-wrapper">
+	<div class="container">
+    	<div class="row">
+            <div class="col s10 m6 l6">
+        		<h5 class="breadcrumbs-title">Subscription</h5>
+                <ol class="breadcrumbs">
+                	<li><a href="index.xhtml">Home</a>
+                    </li>
+                    <li><a href="#">Subscription</a>
+                    </li>
+                   
+                  </ol>
+         	</div>
+       	</div>
+	</div>
+</div>
+
+<!--breadcrumbs end-->
+
+<div class="row">
+<div class="col s12 m12 l12">
+<div class="card-panel">
+	<p:dataTable var="subs" value="#{subscriptionBean.subscribed}">
+		<p:column headerText="Id">
+        	<h:outputText value="#{subs.id}" />
+    	</p:column>
+ 	    <p:column headerText="Start Date">
+    	    <h:outputText value="#{subs.startDate}" />
+    	</p:column>
+ 		<p:column headerText="EndDate">
+ 			<h:outputText value="No end Date" rendered="#{subs.getPackageDetail().getPrice() == 0}"/>
+        	<h:outputText value="#{subs.endDate}" rendered="#{subs.getPackageDetail().getPrice() != 0}" />
+    	</p:column>
+		<p:column headerText="Package Name">
+        	<h:outputText value="#{subs.getPackageDetail().getName()}" />
+    	</p:column>
+		
+	</p:dataTable>
+	</div>
+</div>
+</div>
+
+<div class="row">
+
+<p:repeat var="pack" value="#{subscriptionBean.neoAlgoritmaPackages}">
+
+<div class="col s12 m4 l4">
+	<div class="card animate fadeLeft">
+    	<div  class="card-content">
+        	<span class="card-title"><h:outputText value="#{pack.name}"/> </span>
+            <p><h:outputText value="#{pack.description}"/></p>
+            
+           
+            <h5>$<h:outputText value="#{pack.price}"/><h:outputText value=" (FREE)" rendered="#{pack.price == 0}"/></h5>
+            
+            <div class="card-action">
+            <div class="row">
+            <p:commandLink actionListener="#{subscriptionBean.subscribe(pack)}" 
+							styleClass="col s12 m12 waves-effect waves-light gradient-45deg-deep-purple-blue btn" >
+							Subscribe</p:commandLink>	
+               
+            </div>
+            </div>
+        </div>  
+   </div>
+</div>
+</p:repeat>
+
+</div>
+
+</h:form>
+</ui:define>
+</ui:composition>    
+</h:body>
+</html>

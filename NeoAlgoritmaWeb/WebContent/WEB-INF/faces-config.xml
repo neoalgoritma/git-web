@@ -9,5 +9,20 @@
 		<managed-bean-class>com.neoalgoritma.controller.pub.RegisterBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>subscriptionBean</managed-bean-name>
+		<managed-bean-class>com.neoalgoritma.controller.secured.SubscriptionBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>securedIndexBean</managed-bean-name>
+		<managed-bean-class>com.neoalgoritma.controller.secured.SecuredIndexBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>com.neoalgoritma.controller.pub.LoginBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 
 </faces-config>

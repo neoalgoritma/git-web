@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+     <h:outputStylesheet name="initium/css/custom-theme-ui.css"  />
+   	<h:outputStylesheet name="initium/css/materialize.css" />
+	<h:outputStylesheet name="initium/css/layout-materialize-style.css"  />
+	<h:outputStylesheet name="initium/css/sweetalert2.css"  />
+	<h:outputStylesheet name="initium/css/custom.css"  />
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>NeoAlgoritma - Initium POS</title>
+</h:head>
+
+<h:body styleClass="page-background">
+<h:form id="loginForm">
+<h:panelGroup id="panelDetail" layout="block">
+<div class="middle-screen-box">
+<div class="row">
+				
+                <div class="col s12">
+                  <div class="card-panel border-radius-6 bg-opacity-8">
+                  	<div class="row">
+                  		<div class="col s12">
+                  			<h:graphicImage name="initium/images/neoalgoritma-new-black.png" />
+                  		</div>
+                  	</div>
+                    <div class="row">
+						<div class="col s12">
+							<span>Please login to access the	Point of sales system</span>
+						</div>
+					</div>
+                    <div class="row margin-bottom-0">
+                      <div class="col s12">
+                      
+                    <!-- start input -->
+                    
+                        <div class="row margin-bottom-0">
+                          <div class="input-field col s12">
+                            <i class="material-icons prefix padding-top-07rem">email</i>
+                            <p:inputText type="email" id="email" required="true" requiredMessage="Email required" value="#{loginBean.email}" />
+                            <label for="email">Email</label>
+                            <span class="error-message"><h:message for="email"/></span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="input-field col s12 margin-left-minus-4">
+                            <i class="material-icons prefix padding-top-07rem">lock_outline</i>
+                            <p:inputText id="password" value="#{loginBean.password}" required="true" requiredMessage="Password required" type="password"/>
+                            <label for="passwordl">Password</label>
+                            <span class="error-message"><h:message for="password"/></span>
+                          </div>
+                        </div>
+                        <div class="row">
+                           	<div class="col s12 m6">
+                        		<h:selectBooleanCheckbox id="remember-me" value="#{loginBean.remember}"/>
+                          		<label class="margin-left-5" for="loginForm:remember-me">Remember me</label>
+                       		 	
+                       		</div>
+                           	<div class="col s12 m6 login-submit-button">
+                           		<p:commandLink type="submit"  oncomplete="Materialize.updateTextFields();" 
+                           		update=":loginForm:panelDetail" action="#{loginBean.login()}" styleClass="btn waves-effect waves-light display-block-sm-screen">
+                           		Submit
+                                <i class="material-icons right">send</i></p:commandLink>
+                           </div>
+                       </div>
+                       <div class="row">
+    						<div class="divider height-5"></div>
+						</div>
+						<div class="row">
+							<div class="col s12">
+								<h:link styleClass="btn-floating pulse"><i class="material-icons">add</i></h:link>
+        						<span class="margin-left-5"><b>New user please register</b></span>
+    						</div>
+						</div> 
+                    
+                    
+                    
+             <!-- End input -->
+             
+                    </div>
+                    
+                    </div>
+                  </div>
+                </div>
+
+
+
+</div>
+</div>
+</h:panelGroup>
+</h:form>
+
+
+
+
+
+<h:outputScript library="primefaces" name="jquery/jquery.js" />
+<h:outputScript name="initium/script/layout-materialize.js" />
+<h:outputScript name="initium/script/perfect-scrollbar.min.js" />
+<h:outputScript name="initium/script/plugins.js" />
+<h:outputScript name="initium/script/sweetalert2.all.min.js" />
+<h:outputScript name="initium/script/layout.js"/>
+ 
+
+</h:body>
+</html>

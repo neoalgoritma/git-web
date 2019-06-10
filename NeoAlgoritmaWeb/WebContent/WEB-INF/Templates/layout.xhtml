@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:b="http://bootsfaces.net/ui"
+		xmlns:p="http://primefaces.org/ui"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<meta name="viewport" content="width=device-width"/>
+	<h:outputStylesheet name="initium/css/custom-theme-ui.css"  />
+	<h:outputStylesheet library="webjars" name="font-awesome/5.6.3/css/all-jsf.css" />
+	<h:outputStylesheet name="primeicons/primeicons.css" library="primefaces"/>
+   	<h:outputStylesheet name="initium/css/materialize.css" />
+	<h:outputStylesheet name="initium/css/layout-materialize-style.css"  />
+	<h:outputStylesheet name="initium/css/perfect-scrollbar.css"  />
+	<h:outputStylesheet name="initium/css/sweetalert2.css"  />
+	<h:outputStylesheet name="initium/css/flag-icon.min.css"  />
+	<h:outputStylesheet name="initium/css/custom.css"  />
+	
+	
+	<title>NeoAlgoritma - Initium POS</title>
+	
+</h:head>
+
+<h:body>
+
+	<!-- Start Page Loading -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <!-- End Page Loading -->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+	
+	<ui:include src="header.xhtml"/>
+ 
+    <!-- START MAIN -->
+ 
+    <div id="main">
+    	<!-- START WRAPPER -->
+ 	    <div class="wrapper">
+ 			<ui:include src="sidebar.xhtml"/>
+			<!-- //////////////////////////////////////////////////////////////////////////// -->
+        	
+        	<!-- START CONTENT -->
+        	<section id="content">
+          		<ui:insert name="content"></ui:insert>
+			</section>
+        	<!-- END CONTENT -->
+        
+			<!-- START right-sidebar -->
+			<ui:include src="right-sidebar.xhtml"/>
+			<!-- END right-sidebar -->
+			
+		</div>
+      	<!-- END WRAPPER -->
+    </div>
+    <!-- END MAIN -->
+    
+	<ui:include src="footer.xhtml"/>
+
+<!--  
+<p:ajaxStatus style="position:fixed;right:5px;bottom:5px">
+	<f:facet name="start">
+		<div style="z-index: 99;background-color:Black;opacity:0.6;">
+		<i class="pi pi-spin pi-spinner" style="color:#1f7ed0;font-size: 4em !important;"></i>
+		</div>
+	</f:facet>
+    <f:facet name="complete">
+        <h:outputText value="" />
+	</f:facet>
+</p:ajaxStatus>
+-->
+
+<p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+<f:facet name="error">An error has occurred!</f:facet>
+<p:dialog id="statusDialogId" widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false"   
+		showHeader="false" position="right,bottom" fitViewport="true" height="52" style="background:none;margin-right:20px;margin-bottom:10px;" >
+   		<i class="pi pi-spin pi-spinner" style="color:#1f7ed0;font-size: 4em !important"></i>
+</p:dialog>
+
+<h:outputScript library="primefaces" name="jquery/jquery.js" />
+<h:outputScript name="initium/script/layout-materialize.js" />
+<h:outputScript name="initium/script/perfect-scrollbar.min.js" />
+<h:outputScript name="initium/script/plugins.js" />
+<h:outputScript name="initium/script/sweetalert2.all.min.js" />
+<h:outputScript name="initium/script/layout.js"/>
+ 
+
+
+</h:body>
+</html>

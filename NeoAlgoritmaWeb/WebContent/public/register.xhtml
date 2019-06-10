@@ -95,9 +95,21 @@
 				</div>
 				<div class="row margin-bottom-0">
 					<div class="input-field col s12 m12">
-						<p:inputText id="address" required="true" requiredMessage="Field required"  value="#{registerBean.address}"/>
-						<p:outputLabel for="address" value="Address" />
-						<span class="error-message"><h:message for="address"/></span>
+						<p:inputText id="street" required="true" requiredMessage="Field required"  value="#{registerBean.street}"/>
+						<p:outputLabel for="street" value="Street" />
+						<span class="error-message"><h:message for="street"/></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6">
+						<p:inputText id="city" required="true" requiredMessage="Field required"  value="#{registerBean.city}"/>
+						<p:outputLabel for="city" value="City" />
+						<span class="error-message"><h:message for="city"/></span>
+					</div>
+					<div class="input-field col s12 m6">
+						<p:inputText id="state" required="true" requiredMessage="Field required"  value="#{registerBean.state}"/>
+						<p:outputLabel for="state" value="State" />
+						<span class="error-message"><h:message for="state"/></span>
 					</div>
 				</div>
 				<div class="row">
@@ -114,7 +126,7 @@
 				</div>
 				<div class="row margin-bottom-0">
 					<div class="col s12 m12">
-							<p:commandLink oncomplete="Materialize.updateTextFields();"  update=":createAccountForm:panelDetail" actionListener="#{registerBean.register()}" 
+							<p:commandLink oncomplete="Materialize.updateTextFields();"  update=":registerForm:panelDetail" actionListener="#{registerBean.register()}" 
 							styleClass="btn waves-effect waves-light right" >
 							<i class="material-icons right">send</i>Register</p:commandLink>	
 					</div>

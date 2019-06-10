@@ -71,4 +71,14 @@
   <listener>
     <listener-class>org.apache.myfaces.webapp.StartupServletContextListener</listener-class>
   </listener>
+  
+  <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.neoalgoritma.controller.pub.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/web/*</url-pattern>
+    </filter-mapping>
+    
 </web-app>

@@ -1,0 +1,41 @@
+<ui:composition	xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+    			xmlns:f="http://java.sun.com/jsf/core"
+    			xmlns:p="http://primefaces.org/ui"
+				xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:form>
+
+<nav class="menu" tabindex="0">
+  	<header class="avatar">
+  		<h:graphicImage name="initium/images/generic-avatar-350x350.jpg"/>
+	   	<h2>Welcome, #{loginBean.user.firstname}</h2>
+	</header>
+	<ul>
+    <li tabindex="0" class="main-menu"><i class="fas fa-tachometer-alt"></i><h:link outcome="/secured/dashboard.xhtml" value="Dashboard"/></li>
+    <li tabindex="0" class="main-menu"><i class="fas fa-user"></i><h:link outcome="/secured/users.xhtml" value="Users"/></li>
+ 
+    <li tabindex="0" class="main-menu"><i class="fas fa-truck-loading"></i><p:spacer width="10px" />Suppliers</li>
+    	<li tabindex="0" class="sub-menu"><i class="fas fa-plus-circle"></i><h:link outcome="/secured/suppliers.xhtml" value="List"/></li>
+ 		<li tabindex="0" class="sub-menu"><i class="fas fa-plus-circle"></i><h:link outcome="/secured/supplier/new-supplier.xhtml" value="Add"/></li>
+ 
+ 	<li tabindex="0" class="main-menu"><i class="fas fa-users"></i><p:spacer width="10px" />Customers</li>
+ 		<li tabindex="0" class="sub-menu"><i class="fas fa-plus-circle"></i><h:link outcome="/secured/customers.xhtml" value="List"/></li>
+ 		<li tabindex="0" class="sub-menu"><i class="fas fa-plus-circle"></i><h:link outcome="/secured/customer/new-customer.xhtml" value="Add"/></li>
+ 
+ 	<li tabindex="0" class="main-menu"><i class="fas fa-briefcase"></i><p:spacer width="10px" />Items</li>
+ 	   	<li tabindex="0" class="sub-menu"><i class="fas fa-plus-circle"></i><h:link outcome="/secured/items.xhtml" value="Items"/></li>
+ 		<li tabindex="0" class="sub-menu"><i class="fas fa-plus-circle"></i><h:link outcome="/secured/item/new-item.xhtml" value="Add"/></li>
+ 
+    <li tabindex="0" class="main-menu"><i class="fas fa-shopping-cart" ></i><p:spacer width="10px" />Sales</li>
+    <li tabindex="0" class="sub-menu"><i class="fas fa-plus-circle"></i><h:link outcome="/secured/sales.xhtml" value="List"/></li>
+ 	<li tabindex="0" class="sub-menu"><i class="fas fa-plus-circle"></i><h:link outcome="/secured/sales/new-sales-barcode.xhtml" value="Barcode"/></li>
+ 	<li tabindex="0" class="main-menu"><i class="fas fa-tools"></i><h:link outcome="/secured/sales.xhtml" value="Setting"/></li>
+ 	</ul>
+ 	
+</nav>
+
+</h:form>
+
+</ui:composition>

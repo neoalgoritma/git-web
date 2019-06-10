@@ -4,7 +4,20 @@ $(window).bind('beforeunload', function() {
 });
 
 
-
+redirectToMainRegister = function(){
+	Swal.fire({
+	    title: "Register successful",
+	    text: "Thank you.",
+	    type: "success",
+	    buttonsStyling:"btn waves-effect waves-light right",
+	    confirmButtonColor:"#ff4081",
+	    timer: 3000
+	    
+	}).then(function() {
+	    window.location = "../secured/index.xhtml";
+	});
+	
+}
 redirectToMainLogin = function(){
 	Swal.fire({
 	    title: "Login successful",
@@ -15,7 +28,7 @@ redirectToMainLogin = function(){
 	    timer: 3000
 	    
 	}).then(function() {
-	    window.location = "/initium-pos/web/secured/index.xhtml";
+	    window.location = "../secured/index.xhtml";
 	});
 	
 }

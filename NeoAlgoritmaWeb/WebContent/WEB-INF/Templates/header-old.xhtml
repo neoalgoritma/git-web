@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<div class="layout-topbar">
+		
+		<p:link id="menu-button" href="#" onclick="openCloseSidebar()">
+			<i class="pi pi-bars"></i>
+		</p:link>
+		
+		<h:link class="logo-container" outcome="/secured/index.xhtml">
+            <p:graphicImage name="initium/images/neoalgoritma-new.png"  />
+        </h:link>
+		
+            
+		<ul class="layout-topbar-menu">
+			<li><a href="#">GET STARTED</a></li>
+			<li><a href="#">SUPPORT</a></li>
+		</ul>
+
+	</div>
+
+
+</ui:composition>
