@@ -1,0 +1,78 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<!-- START LEFT SIDEBAR NAV-->
+	<aside id="left-sidebar-nav">
+		<ul id="slide-out" class="side-nav fixed leftside-navigation">
+			<li class="user-details cyan darken-2">
+				<div class="row">
+					<div class="col col s4 m4 l4">
+						<h:graphicImage name="initium/images/generic-avatar-350x350.jpg"
+							alt="NeoAlgoritma"
+							styleClass="circle responsive-img valign profile-image cyan" />
+					</div>
+					<div class="col col s8 m8 l8">
+						<ul id="profile-dropdown-nav" class="dropdown-content">
+							<li><a href="#" class="grey-text text-darken-1"> <i
+									class="material-icons">face</i> Profile
+							</a></li>
+							<li><a href="#" class="grey-text text-darken-1"> <i
+									class="material-icons">settings</i> Settings
+							</a></li>
+							<li><a href="#" class="grey-text text-darken-1"> <i
+									class="material-icons">live_help</i> Help
+							</a></li>
+							<li class="divider"></li>
+							<li><a href="#" class="grey-text text-darken-1"> <i
+									class="material-icons">lock_outline</i> Lock
+							</a></li>
+							<li><a href="#" class="grey-text text-darken-1"> <i
+									class="material-icons">keyboard_tab</i> Logout
+							</a></li>
+						</ul>
+						<a
+							class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn"
+							href="#" data-activates="profile-dropdown-nav">John Doe<i
+							class="mdi-navigation-arrow-drop-down right"></i></a>
+						<p class="user-roal">Administrator</p>
+					</div>
+				</div>
+			</li>
+			<li class="no-padding">
+				<ul class="collapsible" data-collapsible="accordion">
+					<!-- start  -->
+					<li><a class="collapsible-header waves-effect waves-cyan "
+						href="#"><i class="material-icons">add_shopping_cart</i><span
+							class="menu-title" data-i18n="">Point of Sales</span></a>
+						<div class="collapsible-body">
+							<ul class="collapsible collapsible-sub"
+								data-collapsible="accordion">
+								<li><a class="collapsible-body"
+									href="pos/pos-setting.xhtml" data-i18n=""><i
+										class="material-icons">radio_button_unchecked</i><span>Setting</span></a>
+								</li>
+								<li><a class="collapsible-body"
+									href="eCommerce-pricing.html" data-i18n=""><i
+										class="material-icons">radio_button_unchecked</i><span>User</span></a>
+								</li>
+								<li><a class="collapsible-body"
+									href="eCommerce-invoice.html" data-i18n=""><i
+										class="material-icons">radio_button_unchecked</i><span>Summary</span></a>
+								</li>
+							</ul>
+						</div></li>
+					<!-- end  -->
+				</ul>
+			</li>
+		</ul>
+		<a href="#" data-activates="slide-out"
+			class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only">
+			<i class="material-icons">menu</i>
+		</a>
+	</aside>
+	<!-- END LEFT SIDEBAR NAV-->
+
+</ui:composition>

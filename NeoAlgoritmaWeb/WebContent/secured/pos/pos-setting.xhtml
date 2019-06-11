@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:body>
+	<ui:composition template="/WEB-INF/Templates/layout-main.xhtml">
+		<ui:define name="content">
+
+			<h:form id="posSettingForm">
+			<h:panelGroup id="panelDetail" layout="block">
+				<!--breadcrumbs start-->
+				<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+				<div class="breadcrumbs-class" id="breadcrumbs-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col s10 m6 l6">
+								<h5 class="breadcrumbs-title">Point of Sales</h5>
+								<ol class="breadcrumbs">
+									<li><a href="index.xhtml">Home</a></li>
+									<li><a href="#">Setting</a></li>
+
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--breadcrumbs end-->
+
+				<div class="row">
+					<div class="col s12 m12 l12">
+						<div class="card-panel">
+							<div class="row">
+								<div class="col s12">
+									<span>Please login to access the Point of sales system</span>
+								</div>
+							</div>
+							<!-- Start input -->
+							<div class="row margin-bottom-0">
+								<div class="col s12 m6 l6">
+									<div class="input-field col s12">
+										<i class="material-icons prefix padding-top-07rem">description</i>
+										<p:inputText type="text" id="companyName" required="true"
+											requiredMessage="Company name required"
+											value="#{posSettingBean.posSetting.companyName}" />
+										<label for="companyName">Company Name</label> <span
+											class="error-message"><h:message for="companyName" /></span>
+									</div>
+								</div>
+							</div>
+							<div class="row margin-bottom-0">
+								<div class="col s12 m6 l6">
+									<div class="input-field col s12">
+										<i class="material-icons prefix padding-top-07rem">dns</i>
+										<p:inputText type="text" id="databaseName" required="true"
+											requiredMessage="Database name required"
+											value="#{posSettingBean.posSetting.databaseName}" />
+										<label for="databaseName">Database Name</label> <span
+											class="error-message"><h:message for="databaseName" /></span>
+									</div>
+								</div>
+							</div>
+							<div class="row margin-bottom-0">
+								<div class="col s12 m6 l6">
+									<div class="input-field col s12">
+										<i class="material-icons prefix padding-top-07rem">lock_outline</i>
+										<p:inputText id="databasePassword" value="#{posSettingBean.posSetting.databasePassword}"
+											required="true" requiredMessage="Password required"
+											type="password" />
+										<label for="databasePassword">Password</label> <span
+											class="error-message"><h:message for="databasePassword" /></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s12 m6 l6">
+									<div class="input-field col s12">
+										<i class="material-icons prefix padding-top-07rem">lock_outline</i>
+										<p:inputText id="databaseRePassword" value="#{posSettingBean.databaseRePassword}"
+											required="true" requiredMessage="Password re-enter required"
+											type="password" />
+										<label for="databaseRePassword">Re-enter Password</label> <span
+											class="error-message"><h:message for="databaseRePassword" /></span>
+									</div>
+								</div>
+							</div>
+							<div class="row margin-bottom-0">
+                           	<div class="col s12 m6 l6 align-right">
+                           		<p:commandLink type="submit"  oncomplete="Materialize.updateTextFields();" 
+                           		update=":posSettingForm:panelDetail" action="#{posSettingBean.save()}" 
+                           		styleClass="btn waves-effect waves-light display-block-sm-screen">
+                           		Save
+                                <i class="material-icons right">save</i></p:commandLink>
+                           </div>
+                       </div>
+							<!-- End Input -->
+						</div>
+					</div>
+				</div>
+
+
+			</h:panelGroup>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

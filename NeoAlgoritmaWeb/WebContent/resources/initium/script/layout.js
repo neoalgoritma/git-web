@@ -3,6 +3,35 @@ $(window).bind('beforeunload', function() {
 	PF('statusDialog').show();
 });
 
+redirectTo = function(title,text,type,redirectURL){
+	Swal.fire({
+	    title: title,
+	    text: text,
+	    type: type,
+	    buttonsStyling:"btn waves-effect waves-light right",
+	    confirmButtonColor:"#ff4081",
+	    timer: 3000
+	    
+	}).then(function() {
+	    window.location = redirectURL;
+	});
+	
+}
+
+redirectToPosSetting = function(){
+	Swal.fire({
+	    title: "Subscription Activated",
+	    text: "Please setup your point of sales system.",
+	    type: "success",
+	    buttonsStyling:"btn waves-effect waves-light right",
+	    confirmButtonColor:"#ff4081",
+	    timer: 3000
+	    
+	}).then(function() {
+	    window.location = "../secured/pos/pos-setting.xhtml";
+	});
+	
+}
 
 redirectToMainRegister = function(){
 	Swal.fire({

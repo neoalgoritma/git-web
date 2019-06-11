@@ -24,5 +24,10 @@
 		<managed-bean-class>com.neoalgoritma.controller.pub.LoginBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>posSettingBean</managed-bean-name>
+		<managed-bean-class>com.neoalgoritma.controller.secured.PosSettingBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 
 </faces-config>
