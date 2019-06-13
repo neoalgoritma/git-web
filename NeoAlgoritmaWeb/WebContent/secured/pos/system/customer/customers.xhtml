@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:body>
+	<ui:composition template="/WEB-INF/Templates/layout.xhtml">
+		<ui:define name="content">
+
+			<h:form id="customersForm" prependId="false">
+
+				<!--bread crumbs start-->
+				<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+				<div class="breadcrumbs-class" id="breadcrumbs-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col s10 m6 l6">
+								<h5 class="breadcrumbs-title">Point of Sales</h5>
+								<ol class="breadcrumbs">
+									<li><a href="index.xhtml">Customer</a></li>
+									<li><a href="#">List</a></li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--breadcrumbs end-->
+				<!-- Dialogs -->
+				<p:growl id="growl" showDetail="true" sticky="false"
+					redisplay="false" />
+				<p:dialog id="customerDetailDialog" header="Customer details"
+					widgetVar="customerDetailDialogVar" modal="true" responsive="true" closable="true">
+					
+					<p:toolbar>
+		<f:facet name="right">
+		<p:commandButton type="button" icon="pi pi-print">
+   		<p:printer target="customerDetailPanel" />
+		</p:commandButton>
+		</f:facet>
+	</p:toolbar>
+	<p:panelGrid id="customerDetailPanel" styleClass="ui-noborder">
+		<p:row>
+			<p:column>Company</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.company}"/></p:column>
+		</p:row>
+		<p:row>
+			<p:column>Firstname</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.firstname}"/></p:column>
+		</p:row>
+		<p:row>
+			<p:column>Lastname</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.lastname}"/></p:column>
+		</p:row>
+		<p:row>
+			<p:column>Title</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.title}"/></p:column>
+		</p:row>
+		<p:row>
+			<p:column>Email</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.email}"/></p:column>
+		</p:row>
+		<p:row>
+			<p:column>Mobile</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.mobile}"/></p:column>
+		</p:row>
+		<p:row>
+			<p:column>Country</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.address.country}"/></p:column>
+		</p:row>
+		<p:row>
+			<p:column>City</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.address.city}"/></p:column>
+		</p:row>
+		<p:row>
+			<p:column>Post code</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.address.postcode}"/></p:column>
+		</p:row>
+		<p:row>
+			<p:column>Street</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.address.street}"/></p:column>
+		</p:row>
+		<p:row>
+			<p:column>Comment</p:column>
+			<p:column><p:outputLabel value="#{customersBean.selectedCustomer.comment}"/></p:column>
+		</p:row>
+	</p:panelGrid>
+	
+				</p:dialog>
+				<!-- end Dialogs -->
+				<div class="row">
+					<div class="col s12 m12 l12">
+						<div class="card-panel border-radius-6">
+							<div class="row">
+								<div class="col s12">
+									<p:dataTable var="cust" value="#{customersBean.lazyModel}"
+										paginator="true" rows="5"
+										paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+										selectionMode="single"
+										selection="#{customersBean.selectedCustomer}"
+										id="customersTable" lazy="true" widgetVar="customersTableVar"
+										reflow="true"
+										filteredValue="#{customersBean.filteredCustomers}"
+										rowKey="#{cust.id}">
+
+										<f:facet name="header">
+											<div class="row margin-bottom-0">
+												<div class="input-field col s12 m4 l4">
+													<p:inputText id="globalFilter"
+														onkeyup="PF('customersTableVar').filter()" />
+													<p:outputLabel for="globalFilter" value="Filter all fields" />
+												</div>
+												<div class="input-field col s12 m8 l8 align-right">
+													<p:toolbar style="margin-bottom:1px;">
+
+														<f:facet name="right">
+															<p:button icon="pi pi-plus" title="New"
+																href="customer/new-customer.xhtml">
+																<f:param name="i" value="1" />
+															</p:button>
+															<span class="ui-separator"> <span
+																class="ui-icon pi pi-ellipsis-v" />
+															</span>
+															<p:commandButton title="View" icon="pi pi-eye"
+																action="#{customersBean.viewClicked}" update="growl,customerDetailPanel" />
+															<span class="ui-separator"> <span
+																class="ui-icon pi pi-ellipsis-v" />
+															</span>
+															<p:menuButton icon="pi pi-external-link" title="Export">
+																<p:menuitem icon="fas fa fa-file-excel"
+																	title="Excel file format" value="Excel"
+																	onclick="$('#exportExcel').click()">
+																</p:menuitem>
+																<p:menuitem icon="fas fa fa-file-pdf"
+																	title="Pdf file format" value="Pdf"
+																	onclick="$('#exportPdf').click()">
+																</p:menuitem>
+																<p:menuitem icon="fas fa-file-csv"
+																	title="Csv file format" value="Csv"
+																	onclick="$('#exportCsv').click()">
+																</p:menuitem>
+															</p:menuButton>
+														</f:facet>
+													</p:toolbar>
+												</div>
+
+
+											</div>
+
+										</f:facet>
+										<p:ajax event="rowSelect"
+											listener="#{customersBean.onRowSelect}" update="growl" />
+
+										<p:column headerText="Id">
+											<h:outputText value="#{cust.id}" />
+										</p:column>
+										<p:column headerText="Company" sortBy="#{cust.company}">
+											<h:outputText value="#{cust.company}" />
+										</p:column>
+										<p:column headerText="Title" sortBy="#{cust.title}">
+											<h:outputText value="#{cust.title}" />
+										</p:column>
+										<p:column headerText="Email" sortBy="#{cust.email}">
+											<h:outputText value="#{cust.email}" />
+										</p:column>
+										<p:column headerText="Firstname" sortBy="#{cust.firstname}">
+											<h:outputText value="#{cust.firstname}" />
+										</p:column>
+										<p:column headerText="Lastname" sortBy="#{cust.lastname}">
+											<h:outputText value="#{cust.lastname}" />
+										</p:column>
+										<p:column headerText="Mobile" sortBy="#{cust.mobile}">
+											<h:outputText value="#{cust.mobile}" />
+										</p:column>
+										<p:column headerText="Street" sortBy="#{cust.address.street}">
+											<h:outputText value="#{cust.address.street}" />
+										</p:column>
+										<p:column headerText="City" sortBy="#{cust.address.city}">
+											<h:outputText value="#{cust.address.city}" />
+										</p:column>
+										<p:column headerText="State" sortBy="#{cust.address.state}">
+											<h:outputText value="#{cust.address.state}" />
+										</p:column>
+										<p:column headerText="Country"
+											sortBy="#{cust.address.country}">
+											<h:outputText value="#{cust.address.country}" />
+										</p:column>
+										<p:column headerText="PostCode"
+											sortBy="#{cust.address.postcode}">
+											<h:outputText value="#{cust.address.postcode}" />
+										</p:column>
+									</p:dataTable>
+								</div>
+							</div>
+
+							<!-- Start -->
+							<!-- End -->
+						</div>
+					</div>
+				</div>
+
+
+
+			</h:form>
+
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

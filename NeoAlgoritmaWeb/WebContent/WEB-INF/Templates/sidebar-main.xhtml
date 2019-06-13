@@ -43,6 +43,12 @@
 			</li>
 			<li class="no-padding">
 				<ul class="collapsible" data-collapsible="accordion">
+					<li class="bold">
+                  		<h:link outcome="/secured/subscription.xhtml" styleClass="waves-effect waves-cyan">
+                      		<i class="material-icons">dashboard</i>
+                      		<span class="nav-text">Subscription</span>
+                    	</h:link>
+                	</li>
 					<!-- start  -->
 					<li><a class="collapsible-header waves-effect waves-cyan "
 						href="#"><i class="material-icons">add_shopping_cart</i><span
@@ -50,9 +56,12 @@
 						<div class="collapsible-body">
 							<ul class="collapsible collapsible-sub"
 								data-collapsible="accordion">
-								<li><a class="collapsible-body"
-									href="pos/pos-setting.xhtml" data-i18n=""><i
-										class="material-icons">radio_button_unchecked</i><span>Setting</span></a>
+								<li>
+								<h:link outcome="/secured/pos/pos-status.xhtml" styleClass="collapsible-body">
+								<i class="material-icons">radio_button_unchecked</i><span>Status</span>
+								</h:link>
+								
+								
 								</li>
 								<li><a class="collapsible-body"
 									href="eCommerce-pricing.html" data-i18n=""><i

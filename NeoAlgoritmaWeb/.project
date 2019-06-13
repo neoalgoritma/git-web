@@ -3,7 +3,6 @@
 	<name>NeoAlgoritma</name>
 	<comment></comment>
 	<projects>
-		<project>NeoAlgoritma-pos</project>
 		<project>NeoAlgoritma-main</project>
 	</projects>
 	<buildSpec>

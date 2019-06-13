@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:body>
+	<ui:composition template="/WEB-INF/Templates/layout-main.xhtml">
+		<ui:define name="content">
+
+			<h:form id="posSettingForm">
+			<h:panelGroup id="panelDetail" layout="block">
+				<!--bread crumbs start-->
+				<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+				<div class="breadcrumbs-class" id="breadcrumbs-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col s10 m6 l6">
+								<h5 class="breadcrumbs-title">Point of Sales</h5>
+								<ol class="breadcrumbs">
+									<li><a href="index.xhtml">Home</a></li>
+									<li><a href="#">Setting</a></li>
+
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--breadcrumbs end-->
+
+				<div class="row">
+					<div class="col s12 m12 l12">
+						<div class="card-panel">
+							<div class="row">
+								<div class="col s12">
+									<span>Following Point of sales system status</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s12">
+									<span>#{posStatusBean.userPosDatabase.id}</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s12">
+									<span>#{posStatusBean.userPosDatabase.databaseName}</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s12">
+									<span>#{posStatusBean.userPosDatabase.databasePassword}</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s12">
+									<span>#{posStatusBean.userPosDatabase.userId}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</h:panelGroup>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

@@ -25,9 +25,19 @@
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>posSettingBean</managed-bean-name>
-		<managed-bean-class>com.neoalgoritma.controller.secured.PosSettingBean</managed-bean-class>
+		<managed-bean-name>posStatusBean</managed-bean-name>
+		<managed-bean-class>com.neoalgoritma.controller.secured.PosStatusBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>posNewCustomerBean</managed-bean-name>
+		<managed-bean-class>com.neoalgoritma.pos.controller.customer.PosNewCustomerBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>customersBean</managed-bean-name>
+		<managed-bean-class>com.neoalgoritma.pos.controller.customer.CustomersBean</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 
 </faces-config>

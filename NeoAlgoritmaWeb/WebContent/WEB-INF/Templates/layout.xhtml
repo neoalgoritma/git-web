@@ -76,7 +76,8 @@
 </p:ajaxStatus>
 -->
 
-<p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+<p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()"
+		 onerror="alert('error');" />
 <f:facet name="error">An error has occurred!</f:facet>
 <p:dialog id="statusDialogId" widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false"   
 		showHeader="false" position="right,bottom" fitViewport="true" height="52" style="background:none;margin-right:20px;margin-bottom:10px;" >

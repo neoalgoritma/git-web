@@ -15,6 +15,63 @@
 /* Data */
 /* Predefined Colors */
 
+.ui-icon-closethick {
+  background: none;
+  display: inline-block;
+  font: normal normal normal 14px "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-indent: 0px !important;
+  text-align: center; }
+  .ui-icon-closethick:before {
+    content: "\f00d"; }
+    
+.ui-icon-carat-2-n-s {
+  background: none;
+  display: inline-block;
+  font: normal normal normal 14px "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-indent: 0px !important;
+  text-align: center; }
+  .ui-icon-carat-2-n-s:before {
+    content: "\f0dc"; }
+
+.ui-icon-triangle-1-s {
+  background: none;
+  display: inline-block;
+  font: normal normal normal 14px "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-indent: 0px !important;
+  text-align: center; }
+  .ui-icon-triangle-1-s:before {
+    content: "\f0de"; }
+
+.ui-icon-triangle-1-n {
+  background: none;
+  display: inline-block;
+  font: normal normal normal 14px "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-indent: 0px !important;
+  text-align: center; }
+  .ui-icon-triangle-1-n:before {
+    content: "\f0dd"; }
+
+
 body .ui-widget,
 body .ui-widget .ui-widget {
   font-family: "Source Sans Pro","Helvetica Neue",sans-serif;
@@ -1524,7 +1581,7 @@ body .ui-datatable .ui-paginator {
   padding: 6px 12px; }
 body .ui-datatable thead th {
   background-color: #ffffff;
-  padding: 6px 12px;
+  padding: 6px 5px;
   border-color: #eaeaea;
   color: #777777; }
   body .ui-datatable thead th .ui-sortable-column-icon {

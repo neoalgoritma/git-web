@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+    	xmlns:f="http://java.sun.com/jsf/core"
+    	xmlns:b="http://bootsfaces.net/ui"
+		xmlns:p="http://primefaces.org/ui"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+<ui:composition template="/WEB-INF/Templates/layout.xhtml">
+<ui:define name="content">
+<div class="ui-fluid">
+<h:form id="editCustomerForm">
+	<p:fieldset id="editCustomerPanel" style="margin-top:8px">
+		<f:facet name="legend">
+			<p:link outcome="/secured/customers.xhtml"><i class="pi pi-home" /></p:link>
+			<i class="pi pi-chevron-right" /><i class="">Edit Customer</i>
+		</f:facet>
+		<p:panel styleClass="ui-noborder">
+			<f:facet name="header"><p:spacer /></f:facet>
+            <f:facet name="actions">
+          		<p:commandButton title="Save" icon="pi pi-save" action="#{editCustomerBean.saveClicked}" 
+          				 validateClient="true" update="editCustomerDetailPanel,messagesPanel" />
+          		<p:commandButton title="Undo" icon="pi pi-replay"  update="editCustomerPanel" process="@this" >
+          			<p:resetInput target="editCustomerForm" />
+          		</p:commandButton>
+        	</f:facet>
+ 
+ 		<p:messages id="messagesPanel">
+			<p:autoUpdate />
+		</p:messages>
+	
+	<p:panelGrid id="editCustomerDetailPanel" styleClass="ui-noborder" columns="4"  
+		columnClasses="ui-grid-col-1,ui-grid-col-5,ui-grid-col-1,ui-grid-col-5" layout="grid">
+ 		
+ 		<p:outputLabel value="Company"/>
+ 		<p:inputText value="#{editCustomerBean.customerDAO.company}" 
+							required="true" requiredMessage="Please enter a company name" id="company"/>
+		<p:outputLabel value="Title"/>
+		<p:inputText value="#{editCustomerBean.customerDAO.title}" 
+							required="true" requiredMessage="Please enter a title" id="title"/>
+ 		<p:outputLabel value="Firstname"/>
+ 		<p:inputText value="#{editCustomerBean.customerDAO.firstname}" 
+							required="true" requiredMessage="Please enter a firstname" id="firstname"/>
+		<p:outputLabel value="Lastname"/>
+ 		<p:inputText value="#{editCustomerBean.customerDAO.lastname}" 
+							required="true" requiredMessage="Please enter a lastname" id="lastname"/>
+ 		<p:outputLabel value="Email"/>
+ 		<p:inputText value="#{editCustomerBean.customerDAO.email}" 
+							required="true" requiredMessage="Please enter an email" id="email" />
+		<p:outputLabel value="Mobile"/>
+ 		<p:inputText value="#{editCustomerBean.customerDAO.mobile}" 
+						required="true" requiredMessage="Please enter a mobile" id="mobile"/>
+		<p:outputLabel value="Country"/>
+ 		<p:inputText value="#{editCustomerBean.customerDAO.country}" 
+							required="true" requiredMessage="Please enter a country" id="country"/>
+		<p:outputLabel value="City"/>
+ 		<p:inputText value="#{editCustomerBean.customerDAO.city}" 
+							required="true" requiredMessage="Please enter a city" id="city"/>
+		<p:outputLabel value="Post Code"/>
+ 		<p:inputText  value="#{editCustomerBean.customerDAO.postcode}" 
+							 required="true" requiredMessage="Please enter a post code" id="postcode"/>
+		<p:outputLabel value="Address"/>
+ 		<p:inputText value="#{editCustomerBean.customerDAO.address}" 
+							required="true" requiredMessage="Please enter an address" id="address"/>
+		<p:outputLabel value="Comment"/>
+ 		<p:inputText value="#{editCustomerBean.customerDAO.comment}" 
+						required="true" requiredMessage="Please enter a comment" id="comment"/>
+							
+ 	</p:panelGrid>
+	  	<p:dialog header="Confirmation" widgetVar="saveConfirmDialogVar" modal="true" >
+			<p:panelGrid styleClass="ui-noborder">
+				<p:row>
+					<p:column>
+						Update supplier to database <i class="pi pi-question-circle"></i>
+					</p:column>
+				</p:row>
+				<p:row><p:column colspan="2"><p:separator /></p:column></p:row>
+				<p:row>	
+					<p:column>
+						<p:commandButton value="Yes" styleClass="ui-confirmdialog-yes" icon="pi pi-check" 
+							action="#{editCustomerBean.saveToDB}" />
+						<p:spacer />
+						<p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" 
+							icon="pi pi-times" onclick="PF('saveConfirmDialogVar').hide();" />
+					</p:column> 
+				</p:row>
+			</p:panelGrid>
+		</p:dialog> 
+    </p:panel>		 
+</p:fieldset>
+</h:form>
+</div>
+</ui:define>
+</ui:composition>    
+</h:body>
+</html>

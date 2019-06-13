@@ -81,6 +81,10 @@ body {
 	.display-block-sm-screen {
 		display:  block;
 	}
+	
+	.ui-datatable-reflow .ui-reflow-label, .ui-datatable-reflow .ui-reflow-dropdown {
+	display: contents !important;
+}
 }
 .border-radius-6{
 	border-radius: 6px;
@@ -119,3 +123,4 @@ body {
 .align-right {
 	text-align: right;
 }
+

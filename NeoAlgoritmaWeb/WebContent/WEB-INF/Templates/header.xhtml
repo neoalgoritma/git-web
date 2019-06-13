@@ -6,6 +6,7 @@
 
 
     <!-- START HEADER -->
+    <h:form id="headerForm" prependId="false">
     <header id="header" class="page-topbar">
       <!-- start header nav-->
       <div class="navbar-fixed">
@@ -14,9 +15,12 @@
             <ul class="left">
               <li>
                 <h1 class="logo-wrapper">
-                  <a href="index.html" class="brand-logo darken-1">
-                    <h:graphicImage name="initium/images/neoalgoritma-new.png" alt="NeoAlgoritma"/>
-                  </a>
+                	<h:link outcome="/secured/index.xhtml" styleClass="brand-logo darken-1">
+                		<h:graphicImage name="initium/images/neoalgoritma-new.png" alt="NeoAlgoritma"/>
+                	</h:link>
+                  
+                    
+                 
                 </h1>
               </li>
             </ul>
@@ -134,6 +138,7 @@
       </div>
       <!-- end header nav-->
     </header>
+    </h:form>
     <!-- END HEADER -->
 
 
